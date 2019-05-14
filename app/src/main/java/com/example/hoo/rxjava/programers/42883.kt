@@ -19,9 +19,9 @@ fun main(args: Array<String>) {
 }
 
 private fun computeNum(idx: Int) {
-    if (idx == inputStr.length) {
-        val result = getNumFromMemo()
+    val result = getNumFromMemo()
 
+    if (idx == inputStr.length) {
         if (result.length == inputStr.length - k && answer.toBigInteger() <= result.toBigInteger()) {
             answer = result
         }

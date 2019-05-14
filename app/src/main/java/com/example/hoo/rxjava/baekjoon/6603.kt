@@ -37,7 +37,6 @@ private fun getLottoNum(level : Int) {
                 result += currentInput[i].toString() + " "
                 count++
             }
-
         }
 
         if(count == 6)

@@ -1,5 +1,6 @@
 package com.example.hoo.rxjava
 
+import android.annotation.SuppressLint
 import android.view.View
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
@@ -60,8 +61,10 @@ fun main(args: Array<String>) {
     //all()
     //Thread.sleep(100000000L)
 
-    delay()
-    Thread.sleep(100000000L)
+    //delay()
+
+    //repeat()
+    //Thread.sleep(100000000L)
 }
 
 fun scheduler() {
@@ -224,6 +227,7 @@ fun concatMap() {
     }
 }
 
+@SuppressLint("CheckResult")
 fun rxAndroid() {
     val test = arrayOf("apple", "melon", "grape", "ddd", "aa").toCollection(ArrayList())
 
@@ -236,6 +240,7 @@ fun rxAndroid() {
 
 }
 
+@SuppressLint("CheckResult")
 fun heartBeat() {
     Observable.interval(2000, TimeUnit.MILLISECONDS).map {
         "send ping $it"
@@ -246,6 +251,7 @@ fun heartBeat() {
     Thread.sleep(100000000L)
 }
 
+@SuppressLint("CheckResult")
 fun repeat() {
     Observable.interval(500, TimeUnit.MILLISECONDS).map {
         it + 1
@@ -256,6 +262,7 @@ fun repeat() {
     Thread.sleep(100000000L)
 }
 
+@SuppressLint("CheckResult")
 fun defer() {
     val source = Observable.defer {
         Observable.just(1, 2, 3)
@@ -279,6 +286,7 @@ fun intervalRange(start: Int, count: Long, perioid: Long): Observable<Long> {
             .take(count)
 }
 
+@SuppressLint("CheckResult")
 fun interval() {
     Observable.interval(1000, TimeUnit.MILLISECONDS).map {
         it
@@ -287,6 +295,7 @@ fun interval() {
     }
 }
 
+@SuppressLint("CheckResult")
 fun reduce() {
     Observable.range(2, 3)
             .reduce { t1: Int, t2: Int ->
@@ -296,6 +305,7 @@ fun reduce() {
             }
 }
 
+@SuppressLint("CheckResult")
 fun filter() {
     val source = Observable.range(2, 10)
 
@@ -325,6 +335,7 @@ fun filter() {
             })
 }
 
+@SuppressLint("CheckResult")
 fun gooGooDan() {
     Observable.range(2, 8).flatMap {
         Observable.range(1, 9).map { it2 ->
@@ -340,6 +351,7 @@ fun gooGooDan() {
     }
 }
 
+@SuppressLint("CheckResult")
 fun flatMap() {
     Observable.just("1", "2").flatMap {
         Observable.just(it + "a")
@@ -348,6 +360,7 @@ fun flatMap() {
     }
 }
 
+@SuppressLint("CheckResult")
 fun map() {
     Observable.just("1", "2").map {
         it + "dd"
@@ -378,6 +391,7 @@ fun callable() {
     source.subscribe()
 }
 
+@SuppressLint("CheckResult")
 fun fromArray() {
     val arr1 = arrayOf(24, 3, 25, 36, 5, 0, 99)
     val source = Observable.fromArray(*arr1)
@@ -386,6 +400,7 @@ fun fromArray() {
     }
 }
 
+@SuppressLint("CheckResult")
 fun create2() {
     Observable.create<() -> Unit> {
         it.onNext {
@@ -413,6 +428,7 @@ fun create2() {
     })
 }
 
+@SuppressLint("CheckResult")
 fun create() {
     val source = Observable.create<() -> Unit> {
         it.onNext {
