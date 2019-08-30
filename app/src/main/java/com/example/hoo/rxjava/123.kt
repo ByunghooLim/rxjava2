@@ -1,7 +1,6 @@
 package com.example.hoo.rxjava
 
 import android.annotation.SuppressLint
-import android.view.View
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.BiFunction
@@ -20,51 +19,8 @@ val threadTest: Runnable = Runnable {
 var disp: Disposable? = null
 
 fun main(args: Array<String>) {
-    //just()
-    //create()
-    //fromArray()
-    //callable()
-    //callFuture()
-    //map()
-    //flatMap()
-    //gooGooDan()
-    //filter()
-    //reduce()
-    //create2()
-    //interval()
-    //intervalRange()
-
-//    intervalRange(2, 10, 1000L).subscribe {
-//        print("$it\n")
-//        print("$it\n")
-//    }
-//    Thread.sleep(100000000L)
-    //defer()
-    //repeat()
-    //heartBeat()
-
-    //rxAndroid()
-    //rxBindingTest()
-    //concatMap()
-    //groupBy()
-    //zip()
-    //zipInterval()
-
-    //zipElectric1()
-
-    //combineLatest()
-
-    //merge()
-    //
-
-    //concat()
-    //all()
-    //Thread.sleep(100000000L)
-
-    //delay()
-
-    //repeat()
-    //Thread.sleep(100000000L)
+    defer()
+    Thread.sleep(100000000L)
 }
 
 fun scheduler() {
